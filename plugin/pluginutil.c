@@ -14,19 +14,6 @@
 
 #include "pluginutil.h"
 
-static char *strndup(const char *source, size_t maxLength) {
-    size_t i;
-    for (i = 0;; i++) {
-        if ((i >= maxLength) || (source[i] == '\0')) break;
-    }
-    
-    char *ret = malloc(i+1);
-    if (!ret) return NULL;
-    memcpy(ret, source, i);
-    ret[i] = '\0';
-    return ret;
-}
-
 /**
  * Creates a new null terminated string from an NPVariant string.
  */
